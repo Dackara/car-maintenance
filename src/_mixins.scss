@@ -1,3 +1,5 @@
+@import '/src/colors';
+
 @mixin scrollable($padding-right: 10px) {
   scrollbar-gutter: stable;
   overflow-y: auto;
@@ -26,5 +28,36 @@
 
   &::-webkit-scrollbar-thumb:hover {
     background-color: #797979ad;
+  }
+}
+
+@function mix-color($color, $mix: white, $proportion) {
+  @return color-mix(in srgb, $color, #{$mix} #{$proportion});
+}
+
+
+@mixin selectable() {
+  $parent: null;
+
+  @each $selector in & {
+    $parent: $selector;
+  }
+
+  background-color: transparent;
+  color: $font-color-primary;
+
+  &:not(#{$parent}--selected):hover {
+    background-color: $background-button-hover;
+  }
+
+  &--selected {
+    background: light-dark(
+      mix-color($color-primary, white, 90%),
+      $color-primary
+    );
+    color: light-dark(
+      $color-primary,
+      white
+    );
   }
 }
