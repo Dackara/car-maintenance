@@ -7,6 +7,7 @@ html, body {
 
   height: 100%;
   background-color: white;
+  -webkit-tap-highlight-color: transparent;
 }
 
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
@@ -22,10 +23,10 @@ html, body {
   --mat-select-trigger-text-size: 14px;
   --mat-option-label-text-color: #{$font-color-primary};
   --mat-select-panel-background-color: #{$background-secondary};
-  --mat-option-label-text-font: system-ui;
+  --mat-option-label-text-font: #{$font-system};
   --mat-option-label-text-size: 14px;
-  --mat-option-selected-state-label-text-color: #{$color-primary};
-  --mat-option-selected-state-layer-color: #{$background-button-hover};
+  --mat-option-selected-state-label-text-color: inherit;
+  --mat-option-selected-state-layer-color: #{mixins.mix-color(#{$color-primary}, white, 90%)};
   --mat-option-label-text-tracking: 0;
 }
 

@@ -19,3 +19,17 @@ div.mat-mdc-autocomplete-panel.mdc-menu-surface--open {
 .cdk-overlay-pane .mat-mdc-autocomplete-panel {
   @include mixins.scrollable();
 }
+
+.cm-select {
+  border-radius: 12px !important;
+  margin: 8px 0;
+  background-color: $background-secondary;
+  padding: 8px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  .mdc-list-item {
+    @include mixins.selectable;
+  }
+}

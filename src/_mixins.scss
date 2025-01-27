@@ -54,7 +54,7 @@
     background: light-dark(
       mix-color($color-primary, white, 90%),
       $color-primary
-    );
+    ) !important;
     color: light-dark(
       $color-primary,
       white
