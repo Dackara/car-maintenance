@@ -58,35 +58,9 @@
     gap: 8px;
     justify-content: flex-end;
     padding: 0 24px;
-  }
 
-  .button {
-    min-width: 128px;
-  
-    font-family: $font-system;
-    font-weight: normal;
-    color: $font-color-primary;
-    border-radius: 12px;
-  }
-  
-  .button__submit {
-    background-color: var(--primary-color);
-    border-color: transparent;
-    color: #fff;
-  
-    &.mat-button-disabled {
-      color: white;
-      opacity: 0.6;
-    }
-  }
-
-  .button__cancel {
-    background-color: transparent;
-    border-color: transparent;
-    color: $font-color-primary;
-  
-    &:hover {
-      background: $background-button-hover;
+    & > * {
+      flex: 1;
     }
   }
 }

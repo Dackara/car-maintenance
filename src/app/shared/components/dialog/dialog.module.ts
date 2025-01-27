@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DialogComponent } from './dialog.component';
 import { MatIconModule } from '@angular/material/icon';
 import { ButtonModule } from '../button/button.module';
+import { CmButton } from '../button/button';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -12,10 +13,9 @@ import { MatButtonModule } from '@angular/material/button';
   ],
   imports: [
     CommonModule,
-    ButtonModule,
     MatIconModule,
     TranslateModule,
-    MatButtonModule,
+    CmButton,
   ],
   exports: [
     DialogComponent,

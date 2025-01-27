@@ -27,15 +27,10 @@
     <ng-content select="[content]"></ng-content>
   </main>
   <footer *ngIf="!hideFooter" class="dialog__footer">
-    <button class="button button__cancel"
-            mat-button
-            (click)="onClose()">
+    <button cm-button variant="secondary" (click)="onClose()">
       {{"DIALOG.BUTTONS.CANCEL" | translate}}
     </button>
-    <button class="button button__submit"
-            mat-button
-            [disabled]="disabledSumbitButton"
-            (click)="onSubmit()">
+    <button [disabled]="disabledSumbitButton" cm-button variant="primary" (click)="onSubmit()">
       {{(submitText || (mode === FormModeEnum.Create ? "DIALOG.BUTTONS.ADD" : "DIALOG.BUTTONS.EDIT")) | translate}}
     </button>
   </footer>
