@@ -17,6 +17,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ButtonModule } from '../button/button.module';
 import { ContentContainerModule } from '../content-container/content-container.module';
+import { CmButton } from '../button/button';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,6 @@ import { ContentContainerModule } from '../content-container/content-container.m
     MatIconModule,
     MatCheckboxModule,
     MatDividerModule,
-    MatButtonModule,
     TranslateModule,
     MatProgressSpinnerModule,
     MatTableModule,
@@ -40,6 +40,7 @@ import { ContentContainerModule } from '../content-container/content-container.m
     MatSlideToggleModule,
     ButtonModule,
     ContentContainerModule,
+    CmButton,
   ],
   exports: [
     PrintDialogComponent,

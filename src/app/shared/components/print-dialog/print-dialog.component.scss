@@ -92,10 +92,10 @@
     gap: 8px;
     justify-content: flex-end;
     margin-top: auto;
-    padding: 24px 10px 0;
+    padding: 24px 10px 0 0;
 
-    .button {
-      min-width: 128px;
+    & > * {
+      flex: 1;
     }
   }
 
@@ -123,31 +123,6 @@
 
   .mat-button-toggle-button {
     width: 104px;
-  }
-
-  .button {
-    width: 92px;
-  
-    border-radius: 12px;
-    font-family: $font-system;
-    font-weight: normal;
-    color: $font-color-primary;
-  }
-  
-  .button__submit {
-    background-color: var(--primary-color);
-    border-color: transparent;
-    color: #fff;
-  }
-  
-  .button__cancel {
-    background-color: transparent;
-    border-color: transparent;
-    color: $font-color-primary;
-  
-    &:hover {
-      background: $background-button-hover;
-    }
   }
 }
 

@@ -33,8 +33,12 @@
     </div>
 
     <div class="print-dialog__buttons">
-      <button class="button button__cancel" mat-button (click)="dialogRef.close()">{{'DIALOG.BUTTONS.CANCEL' | translate}}</button>
-      <button class="button button__submit" mat-button (click)="onPrint()">{{'DIALOG.BUTTONS.EXPORT' | translate}}</button>
+      <button cm-button variant="secondary" (click)="dialogRef.close()">
+        {{'DIALOG.BUTTONS.CANCEL' | translate}}
+      </button>
+      <button cm-button (click)="onPrint()">
+        {{'DIALOG.BUTTONS.EXPORT' | translate}}
+      </button>
     </div>
   </div>
 
