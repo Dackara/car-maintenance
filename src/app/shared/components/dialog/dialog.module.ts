@@ -5,7 +5,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { ButtonModule } from '../button/button.module';
 import { CmButton } from '../button/button';
 import { TranslateModule } from '@ngx-translate/core';
-import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -13,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
   ],
   imports: [
     CommonModule,
+    ButtonModule,
     MatIconModule,
     TranslateModule,
     CmButton,
