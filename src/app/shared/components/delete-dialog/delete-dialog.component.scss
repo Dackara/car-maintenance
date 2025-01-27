@@ -56,30 +56,10 @@
     display: flex;
     justify-content: center;
     gap: 8px;
-  }
+    padding: 0 8px;
 
-  .button {
-    min-width: 128px;
-
-    border-radius: 8px;
-    font-family: $font-system;
-    font-weight: normal;
-    color: $font-color-primary;
-  }
-  
-  .button__submit {
-    background-color: $color-dangerous;
-    border-color: $color-dangerous;
-    color: white;
-  }
-
-  .button__cancel {
-    background-color: transparent;
-    border-color: transparent;
-    color: $font-color-primary;
-
-    &:hover {
-      background: $background-button-hover;
+    & > * {
+      flex: 1;
     }
   }
 }

@@ -14,10 +14,10 @@
   </main>
 
   <footer class="delete-dialog__footer">
-    <button class="button button__cancel" mat-button (click)="onClose()">
+    <button cm-button variant="secondary" (click)="onClose()">
       {{"DIALOG.BUTTONS.CANCEL" | translate}}
     </button>
-    <button class="button button__submit" mat-button (click)="onSubmit()">
+    <button cm-button variant="dangerous" (click)="onSubmit()">
       {{"DIALOG.BUTTONS.DELETE" | translate}}
     </button>
   </footer>
