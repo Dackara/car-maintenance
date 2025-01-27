@@ -1,5 +1,6 @@
 html[data-platform='linux'] {
   &[data-theme='light'] {
+    color-scheme: light;
     --background-primary: white;
     --background-secondary: #fafafa;
     --background-button-hover: #0000000d;
@@ -7,7 +8,7 @@ html[data-platform='linux'] {
 
     --color-border: #ebebeb;
     --color-button-icon: #4b4848;
-    --color-dangerous: #c7162b;
+    --color-dangerous: #b6151b;
 
     --platform-color-primary: #222;
     --platform-color-secondary: #4b4848;
@@ -34,6 +35,7 @@ html[data-platform='linux'] {
   }
 
   &[data-theme='dark'] {
+    color-scheme: dark;
     --background-primary: #343434;
     --background-secondary: #3e3e3e;
     --background-button-hover: #ffffff12;
@@ -41,7 +43,7 @@ html[data-platform='linux'] {
 
     --color-border: #4d4d4d;
     --color-button-icon: #f7f7f7;
-    --color-dangerous: #d7121a;
+    --color-dangerous: #b6151b;
 
     --platform-color-primary: white;
     --platform-color-secondary: #a6a6a6;

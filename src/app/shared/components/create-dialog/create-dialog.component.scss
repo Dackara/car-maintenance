@@ -1,3 +1,5 @@
+@use '/src/mixins' as mixins;
+
 @import '/src/colors';
 @import '/src/fonts';
 
@@ -33,6 +35,8 @@
     border-radius: 18px;
     border: 1.5px solid $color-border;
     padding: 12px;
+
+    background-color: rgba(0, 0, 0, 0.015);
   }
 
   &__icon-selector {
@@ -55,6 +59,8 @@
   }
 
   &__icon-item {
+    @include mixins.selectable;
+
     cursor: pointer;
     box-sizing: border-box;
     height: 38px;
@@ -65,12 +71,5 @@
     align-items: center;
     justify-content: center;
 
-    &--selected {
-      background: $background-button-hover;
-    }
-
-    &:hover {
-      background: $background-button-hover;
-    }
   }
 }
