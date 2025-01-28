@@ -17,8 +17,4 @@ export const startPageOptions = [
     name: 'NAVIGATIONS.STORAGE',
     value: NavigationEnum.Storage,
   },
-  // {
-  //   name: 'NAVIGATIONS.STATISTIC',
-  //   value: NavigationEnum.Statistic,
-  // },
 ];

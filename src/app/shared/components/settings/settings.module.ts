@@ -19,9 +19,20 @@ import { ButtonModule } from '../button/button.module';
 import { ContentContainerModule } from '../content-container/content-container.module';
 import { CommonPipesModule } from '@shared/pipes/common-pipes.module';
 import { MatRippleModule } from '@angular/material/core';
+import { MatSidenavModule } from '@angular/material/sidenav';
+
+import {
+  AboutSettingsPageComponent,
+  CommonSettingsPageComponent,
+  ContactsSettingsPageComponent,
+  LanguageSettingsPageComponent,
+  UnitsSettingsPageComponent,
+  CurrencySettingsPageComponent,
+  AppearanceSettingsPageComponent,
+} from './pages';
 
 @NgModule({
-  declarations: [SettingsComponent, SettingComponent],
+  declarations: [SettingsComponent],
   imports: [
     CommonModule,
     MatIconModule,
@@ -40,6 +51,15 @@ import { MatRippleModule } from '@angular/material/core';
     ContentContainerModule,
     CommonPipesModule,
     MatRippleModule,
+    MatSidenavModule,
+    ContactsSettingsPageComponent,
+    UnitsSettingsPageComponent,
+    CommonSettingsPageComponent,
+    LanguageSettingsPageComponent,
+    AboutSettingsPageComponent,
+    SettingComponent,
+    CurrencySettingsPageComponent,
+    AppearanceSettingsPageComponent,
   ],
   providers: [
     SettingsService,

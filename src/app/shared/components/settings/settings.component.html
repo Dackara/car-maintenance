@@ -1,152 +1,68 @@
 <div class="settings">
   <app-dialog [title]="'PAGES.SETTINGS.TITLE' | translate"
               [hideFooter]="true"
+              [sideMenuButton]="sidenavMode() === 'over'"
               (close)="dialogRef.close()"
+              (sideButtonClick)="toggleSideNav()"
   >
     <ng-container content>
-      <content-container [title]="'PAGES.SETTINGS.SECTIONS.COMMON' | translate">
-        <app-setting [label]="'PAGES.SETTINGS.FIELDS.DATABASE_PATH' | translate" icon="storage">
-          <div class="settings__item-field settings__item-field--disable">
-            <span class="settings__text"
-                  [matTooltipClass]="'mat-tooltip--long-text'"
-                  [matTooltip]="this.settingsService.settings.databasePath">
-              {{this.settingsService.settings.databasePath}}
-            </span>
-            <app-button button-transparent (click)="onDatabaseChange()">
-              <mat-icon svgIcon="edit"></mat-icon>
-            </app-button>
-          </div>
-        </app-setting>
-
-        <mat-divider class="settings__divider"></mat-divider>
-
-        <app-setting [label]="'PAGES.SETTINGS.FIELDS.START_PAGE' | translate" icon="meeting_room">
-          <div class="settings__item-field settings__item-field--disable">
-            <mat-form-field class="settings__item-field settings__item-field--select">
-              <mat-select hideSingleSelectionIndicator="true" panelClass="cm-select" [value]="settingsService.settings.startPage" (valueChange)="onStartPageChanged($event)">
-                <mat-option *ngFor="let page of startPageOptions" [value]="page.value">
-                  {{page.name | translate}}
-                </mat-option>
-              </mat-select>
-              <mat-icon svgIcon="expand" class="mat-select__expand-icon"></mat-icon>
-            </mat-form-field>
-          </div>
-        </app-setting>
-
-        <app-setting *ngIf="false" [label]="'PAGES.SETTINGS.FIELDS.FIRST_TAB' | translate" icon="tab">
-          <mat-button-toggle-group class="settings__toggle-group"
-                                   [value]="this.settingsService.settings.firstTab"
-                                   (change)="onFirstTabChanged($event.value)">
-            <mat-button-toggle [value]="NavigationTabEnum.Categories">
-              {{"PAGES.SETTINGS.BUTTONS.CATEGORIES" | translate}}
-            </mat-button-toggle>
-            <mat-button-toggle [value]="NavigationTabEnum.Cars">
-              {{"PAGES.SETTINGS.BUTTONS.CARS" | translate}}
-            </mat-button-toggle>
-          </mat-button-toggle-group>
-        </app-setting>
-      </content-container>
-
-      <content-container [title]="'PAGES.SETTINGS.SECTIONS.LANG' | translate">
-        <app-setting [label]="'PAGES.SETTINGS.FIELDS.LANG' | translate" icon="language">
-          <mat-form-field class="settings__item-field settings__item-field--select">
-            <mat-select hideSingleSelectionIndicator="true" panelClass="cm-select" [value]="settingsService.settings.language" (valueChange)="onSelectLanguage($event)">
-              <mat-option *ngFor="let language of languageOptions" [value]="language.value">
-                {{ language.name }}
-              </mat-option>
-            </mat-select>
-            <mat-icon svgIcon="expand" class="mat-select__expand-icon"></mat-icon>
-          </mat-form-field>
-        </app-setting>
-
-        <mat-divider class="settings__divider"></mat-divider>
-
-        <app-setting [label]="'PAGES.SETTINGS.FIELDS.REGION' | translate" icon="text_format">
-          <mat-form-field class="settings__item-field settings__item-field--select">
-            <mat-select hideSingleSelectionIndicator="true" panelClass="cm-select" [value]="settingsService.settings.region" (valueChange)="onSelectRegion($event)">
-              <mat-option *ngFor="let region of regionOptions" [value]="region.value">
-                {{ region.name }}
-              </mat-option>
-            </mat-select>
-            <mat-icon svgIcon="expand" class="mat-select__expand-icon"></mat-icon>
-          </mat-form-field>
-        </app-setting>
-      </content-container>
-
-      <content-container [title]="'PAGES.SETTINGS.SECTIONS.UNITS' | translate">
-        <app-setting [label]="'PAGES.SETTINGS.FIELDS.METRIC_SYSTEM' | translate" icon="straighten">
-          <mat-button-toggle-group class="settings__toggle-group"
-                                   [value]="MetricSystemEnum[settingsService.settings.units?.metricSystem] || MetricSystemEnum[settingsService.settings.region]"
-                                   (change)="onMetricSystemChanged($event.value)">
-            <mat-button-toggle [value]="MetricSystemEnum.Mi">
-              {{"METRIC_SYSTEM.MILES" | translate}}
-            </mat-button-toggle>
-            <mat-button-toggle [value]="MetricSystemEnum.Km">
-              {{"METRIC_SYSTEM.KILOMETERS" | translate}}
-            </mat-button-toggle>
-          </mat-button-toggle-group>
-        </app-setting>
-
-        <mat-divider class="settings__divider"></mat-divider>
-
-        <app-setting [label]="'PAGES.SETTINGS.FIELDS.CURRENCY' | translate" icon="attach_money">
-          <mat-form-field class="settings__item-field settings__item-field--currency">
-            <mat-select hideSingleSelectionIndicator="true" panelClass="cm-select" [value]="settingsService.settings.units.currency" (valueChange)="onSelectCurrency($event)">
-              <mat-select-trigger class="settings__currency-preview">
-                <mat-icon class="settings__currency-icon" [svgIcon]="'currencies:' + getCurrentCurrency().icon"></mat-icon>
-                <span class="settings__currency-name">{{getCurrentCurrency().name | translate}}</span>
-              </mat-select-trigger>
-
-              <mat-option *ngFor="let currency of currencyOptions | orderTranslate:'name'" [value]="currency.value">
-                <div class="settings__currency-option">
-                  <mat-icon class="settings__currency-option-icon" [svgIcon]="'currencies:' + currency.icon"></mat-icon>
-                  <span>{{ currency.name | translate }}</span>
-                </div>
-              </mat-option>
-            </mat-select>
-            <mat-icon svgIcon="expand" class="mat-select__expand-icon"></mat-icon>
-          </mat-form-field>
-        </app-setting>
-      </content-container>
-
-      <content-container [title]="'PAGES.SETTINGS.SECTIONS.APPEARANCE' | translate">
-        <app-setting [label]="'PAGES.SETTINGS.FIELDS.APPEARANCE' | translate" customIcon="schema">
-          <section class="appearance">
-            <div *ngFor="let schema of themeService.getAvailableSchemas()"
-                  class="appearance__item"
-                  [class.appearance__item--selected]="settingsService.settings.appearance.appearance === schema.type"
-                  (click)="setAppearance(schema.type)">
-              <div mat-ripple class="appearance__illustration appearance__illustration--{{schema.type}}"></div>
-              <span class="appearance__label">{{schema.name | translate}}</span>
+      <mat-sidenav-container #sidenavContainer class="content" autosize>
+        <mat-sidenav #sidenav [mode]="sidenavMode()"
+                     class="settings__sidenav"
+        >
+        <div class="settings__sidebar">
+          @for (group of settingsGroups(); track $index) {
+            <div class="settings__group"
+                 matRipple
+                 [class.settings__group--selected]="selectedSettingsGroup() === group.page"
+                 [class.settings__group--bottom]="group.isBottom"
+                 (click)="selectGroup(group.page)">
+              <mat-icon class="settings__group-icon">{{group.icon}}</mat-icon>
+              <span>{{group.name | translate}}</span>
             </div>
-          </section>
-        </app-setting>
-
-        <mat-divider class="settings__divider"></mat-divider>
-
-        <app-setting [label]="'PAGES.SETTINGS.FIELDS.COLORS' | translate" icon="palette">
-          <app-color-selector [colors]="colors"
-                              [selected]="settingsService.settings.appearance.primaryColor"
-                              (select)="onSelectColor($event)">
-          </app-color-selector>
-        </app-setting>
-
-        <mat-divider class="settings__divider"></mat-divider>
-
-        <app-setting [label]="'PAGES.SETTINGS.FIELDS.ICONS' | translate" icon="category">
-          <div class="settings__item-field settings__item-field--disable">
-            {{"PAGES.SETTINGS.ICONS_PACK_NAMES.DEFAULT" | translate}}
+          }
+        </div>
+        </mat-sidenav>
+      
+        <mat-sidenav-content class="settings__sidenav-content">
+          @if (sidenavMode() === 'over') {
+            <div class="settings__group-title">
+              {{pageTitle() | translate}}
+            </div>
+          }
+          <div class="settings__sidenav-container">
+            <div class="settings__sidenav-wrapper">
+              @switch (selectedSettingsGroup()) {
+                @case ('common') {
+                  <cm-common-settings-page></cm-common-settings-page>
+                }
+                @case ('currency') {
+                  <cm-currency-settings-page [currencyOptions]="currencyOptions$$()"></cm-currency-settings-page>
+                }
+                @case ('units') {
+                  <cm-units-settings-page [region]="settingsService.settings.region"
+                                          [metricSystem]="settingsService.settings.units?.metricSystem">
+                  </cm-units-settings-page>
+                }
+                @case ('language') {
+                  <cm-language-settings-page [languageOptions]="languageOptions"
+                                             [regionOptions]="regionOptions">
+                  </cm-language-settings-page>
+                }
+                @case ('appearance') {
+                  <cm-appearance-settings-page [colors]="colors"></cm-appearance-settings-page>
+                }
+                @case ('contact') {
+                  <cm-contacts-settings-page></cm-contacts-settings-page>
+                }
+                @case ('about') {
+                  <cm-about-settings-page></cm-about-settings-page>
+                }
+              }
+            </div>
           </div>
-        </app-setting>
-
-        <mat-divider class="settings__divider"></mat-divider>
-
-        <app-setting [label]="'PAGES.SETTINGS.FIELDS.ANIMATION' | translate" icon="animation">
-          <app-switch [value]="settingsService.settings.appearance.animations"
-                      (change)="onAnimationsChanged($event)">
-          </app-switch>
-        </app-setting>
-      </content-container>
+        </mat-sidenav-content>
+      </mat-sidenav-container>
     </ng-container>
   </app-dialog>
 </div>

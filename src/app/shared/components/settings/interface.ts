@@ -7,6 +7,8 @@ import { ColorEnum } from "./colors-enum";
 import { NavigationEnum } from "app/home/navigation-bar/navigation.enum";
 
 export type AppearanceType = 'dark' | 'light' | 'auto';
+export type SettingsGroupType = 'common' | 'currency' | 'metric-system' | 'language' | 'units' | 'appearance' | 'contact' | 'info' | 'about';
+
 export interface Settings {
   language: string;
   region: LocaleEnum;
@@ -29,4 +31,16 @@ export interface Settings {
       hiddenColumns: string [],
     }
   }
+}
+
+export interface SettingsGroup {
+  page: SettingsGroupType;
+  name: string;
+  icon: string;
+  isBottom?: boolean;
+}
+
+export interface SelectOption {
+  name: string;
+  value: string;
 }

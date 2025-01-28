@@ -1,0 +1,31 @@
+<app-setting [label]="'PAGES.SETTINGS.FIELDS.APPEARANCE' | translate" customIcon="schema">
+  <section class="appearance">
+    @for (schema of themeService.getAvailableSchemas(); track $index) {
+      <div class="appearance__item"
+           [class.appearance__item--selected]="settingsService.settings.appearance.appearance === schema.type"
+           (click)="setAppearance(schema.type)"
+      >
+        <div mat-ripple class="appearance__illustration appearance__illustration--{{schema.type}}"></div>
+        <span class="appearance__label">{{schema.name | translate}}</span>
+      </div>
+    }
+
+  </section>
+</app-setting>
+
+<mat-divider class="settings__divider"></mat-divider>
+
+<app-setting [label]="'PAGES.SETTINGS.FIELDS.COLORS' | translate" icon="palette">
+  <app-color-selector [colors]="colors()"
+                      [selected]="settingsService.settings.appearance.primaryColor"
+                      (select)="onSelectColor($event)">
+  </app-color-selector>
+</app-setting>
+
+<mat-divider class="settings__divider"></mat-divider>
+
+<app-setting [label]="'PAGES.SETTINGS.FIELDS.ANIMATION' | translate" icon="animation">
+  <app-switch [value]="settingsService.settings.appearance.animations"
+              (change)="onAnimationsChanged($event)">
+  </app-switch>
+</app-setting>

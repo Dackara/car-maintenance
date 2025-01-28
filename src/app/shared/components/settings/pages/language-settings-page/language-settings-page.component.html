@@ -1,0 +1,35 @@
+<app-setting [label]="'PAGES.SETTINGS.FIELDS.LANG' | translate" icon="language">
+  <mat-form-field class="settings__item-field settings__item-field--select">
+    <mat-select hideSingleSelectionIndicator="true"
+                panelClass="cm-select"
+                [value]="settingsService.settings.language"
+                (valueChange)="onSelectLanguage($event)"
+      >
+        @for (language of languageOptions(); track $index) {
+          <mat-option [value]="language.value">
+            {{ language.name }}
+          </mat-option>
+        }
+    </mat-select>
+    <mat-icon svgIcon="expand" class="mat-select__expand-icon"></mat-icon>
+  </mat-form-field>
+</app-setting>
+
+<mat-divider class="settings__divider"></mat-divider>
+
+<app-setting [label]="'PAGES.SETTINGS.FIELDS.REGION' | translate" icon="text_format">
+  <mat-form-field class="settings__item-field settings__item-field--select">
+    <mat-select hideSingleSelectionIndicator="true"
+                panelClass="cm-select"
+                [value]="settingsService.settings.region"
+                (valueChange)="onSelectRegion($event)"
+    >
+      @for (region of regionOptions(); track $index) {
+        <mat-option [value]="region.value">
+          {{ region.name }}
+        </mat-option>
+      }
+    </mat-select>
+    <mat-icon svgIcon="expand" class="mat-select__expand-icon"></mat-icon>
+  </mat-form-field>
+</app-setting>

@@ -1,0 +1,21 @@
+<app-setting [label]="'PAGES.SETTINGS.FIELDS.CURRENCY' | translate" icon="attach_money">
+  <mat-form-field class="settings__item-field settings__item-field--currency">
+    <mat-select hideSingleSelectionIndicator="true" panelClass="cm-select" [value]="settingsService.settings.units.currency" (valueChange)="onSelectCurrency($event)">
+      <mat-select-trigger class="settings__currency-preview">
+        <mat-icon class="settings__currency-icon" [svgIcon]="'currencies:' + currentCurrency$$().icon"></mat-icon>
+        <span class="settings__currency-name">{{currentCurrency$$().name | translate}}</span>
+      </mat-select-trigger>
+
+      @for (currency of currencyOptions() | orderTranslate:'name'; track $index) {
+        <mat-option [value]="currency.value">
+          <div class="settings__currency-option">
+            <mat-icon class="settings__currency-option-icon" [svgIcon]="'currencies:' + currency.icon"></mat-icon>
+            <span>{{ currency.name | translate }}</span>
+          </div>
+        </mat-option>
+      }
+
+    </mat-select>
+    <mat-icon svgIcon="expand" class="mat-select__expand-icon"></mat-icon>
+  </mat-form-field>
+</app-setting>

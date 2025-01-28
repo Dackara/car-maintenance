@@ -16,6 +16,11 @@
   </div>
   </div>
   <header class="dialog__header" [class.dialog__header--border]="contentScrolled">
+    @if (sideMenuButton()) {
+      <app-button button-transparent (click)="sideButtonClick.emit()">
+        <mat-icon svgIcon="menu"></mat-icon>
+      </app-button>
+    }
     <div class="dialog__title">{{title | translate}}</div>
     <div class="dialog__buttons">
       <app-button *ngIf="closable" button-transparent (click)="onClose()">

@@ -127,8 +127,7 @@ export class DialogManagerService {
   public openSettingsDialog(): void {
     this.dialog
       .open(SettingsComponent, {
-        disableClose: true,
-        width: "564px",
+        width: "1200px",
         panelClass: "dialog-settings",
       });
   }

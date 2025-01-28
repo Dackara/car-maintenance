@@ -1,0 +1,32 @@
+<app-setting [label]="'PAGES.SETTINGS.FIELDS.DATABASE_PATH' | translate" icon="storage">
+  <div class="settings__item-field settings__item-field--disable">
+    <span class="settings__text"
+          [matTooltipClass]="'mat-tooltip--long-text'"
+          [matTooltip]="this.settingsService.settings.databasePath">
+      {{this.settingsService.settings.databasePath}}
+    </span>
+    <app-button button-transparent (click)="onDatabaseChange()">
+      <mat-icon svgIcon="edit"></mat-icon>
+    </app-button>
+  </div>
+</app-setting>
+
+<mat-divider class="settings__divider"></mat-divider>
+
+<app-setting [label]="'PAGES.SETTINGS.FIELDS.START_PAGE' | translate" icon="meeting_room">
+  <div class="settings__item-field settings__item-field--disable">
+    <mat-form-field class="settings__item-field settings__item-field--select">
+      <mat-select hideSingleSelectionIndicator="true"
+                  panelClass="cm-select" [value]="settingsService.settings.startPage"
+                  (valueChange)="onStartPageChanged($event)"
+      >
+        @for (page of startPageOptions$$(); track $index) {
+          <mat-option [value]="page.value">
+            {{page.name | translate}}
+          </mat-option>
+        }
+      </mat-select>
+      <mat-icon svgIcon="expand" class="mat-select__expand-icon"></mat-icon>
+    </mat-form-field>
+  </div>
+</app-setting>

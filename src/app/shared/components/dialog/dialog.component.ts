@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, input, Input, OnInit, output, Output } from '@angular/core';
 import { Observable, timer } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { FormModeEnum } from '../create-dialog/form-mode.enum';
@@ -43,6 +43,10 @@ export class DialogComponent implements OnInit {
 
   @Output()
   submit: EventEmitter<void> = new EventEmitter();
+
+  sideMenuButton = input<boolean>(false);
+  sideButtonClick = output<void>();
+
 
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event) {
