@@ -2,12 +2,12 @@
 
 :host {
   display: block;
-  height: 42px;
+  height: 100%;
 }
 
 .displacer {
   height: 100%;
-  width: 32px;
+  width: 36px;
   display: flex;
   justify-content: center;
   gap: 1px;
@@ -16,14 +16,14 @@
     position: relative;
     height: 100%;
     width: 2px;
-    margin-left: 5px;
+    margin-left: 11px;
 
     background: $color-border;
   }
 
   &__sub-line {
     position: absolute;
-    top: 11px;
+    top: 12px;
     height: 12px;
     width: 12px;
 

@@ -6,7 +6,7 @@
   </div>
   <div class="categories-tree-node__content"
        (contextmenu)="onContextMenu($event)">
-    <div class="categories-tree-node__selection-container" [class.categories-tree-node__content--select]="isSelected" (click)="onSelect(child)" matRipple>
+    <div class="categories-tree-node__selection-container" [class.categories-tree-node__selection-container--selected]="isSelected" (click)="onSelect(child)" matRipple>
       <div class="categories-tree-node__icon-container">
         <mat-icon class="categories-tree-node__icon" [svgIcon]="'illustrations:' + (child.illustration?.replace('.svg', '') || 'wrench')"></mat-icon>
       </div>
@@ -29,7 +29,7 @@
   <ng-container>
     <div class="categories-tree-node__sub-node"
         [class.categories-tree-node__sub-node--expanded]="expanded"
-        [style.height]="expanded ? (child.children?.length * 42) + 'px' : 0">
+        [style.height]="expanded ? (child.children?.length * 48) + 'px' : 0">
       <div class="categories-tree-node__displacer">
         <app-category-tree-displacer *ngFor="let c of child.children"></app-category-tree-displacer>
       </div>

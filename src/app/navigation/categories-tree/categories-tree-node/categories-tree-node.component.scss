@@ -1,3 +1,5 @@
+@use '/src/mixins' as mixins;
+
 @import '/src/colors';
 @import '/src/fonts';
 
@@ -23,6 +25,12 @@
     }
   }
 
+  &__displacer {
+    &:first-child, &:last-child {
+      height: 46px;
+    }
+  }
+
   &__sub-node-item {
     padding: 4px 0;
     width: 100%;
@@ -34,7 +42,7 @@
   &__icon-container {
     display: flex;
     align-items: center;
-    width: 22px;
+    width: 24px;
   }
 
   &__name {
@@ -48,24 +56,21 @@
   }
 
   &__icon {
-    color: $font-color-primary;
+    color: inherit;
   }
 
   &__selection-container {
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 0 12px 0 8px;
+    padding: 0 12px;
     gap: 6px;
-    border-radius: 12px;
-    color: $font-color-primary;
+    border-radius: 21px;
     cursor: pointer;
-    height: 38px;
-    transition: background-color 0.1s ease-out;
+    height: 42px;
+    transition: background-color 0.15s ease-in;
 
-    &:hover {
-      background: $background-button-hover;
-    }
+    @include mixins.selectable;
   }
 
   &__content {
@@ -75,27 +80,10 @@
 
     line-height: 1.5rem;
 
-
     &--select {
-      color: white;
-      background: var(--primary-color);
-
       .categories-tree-node__name {
         transform: translate(2px);
       }
-
-      .categories-tree-node__icon {
-        color: white;
-      }
-
-      .categories-tree-node__expand-button {
-        color: white;
-      }
-    }
-
-    &--select:hover {
-      color: white;
-      background: var(--primary-color);
     }
   }
 
