@@ -17,6 +17,8 @@ import { ButtonModule } from '../button/button.module';
 import { ContentContainerModule } from '../content-container/content-container.module';
 import { CmButton } from '../button/button';
 import { CmCheckbox } from '../checkbox/checkbox';
+import { SwitchModule } from '../switch/switch.module';
+import { DialogModule } from '../dialog/dialog.module';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { CmCheckbox } from '../checkbox/checkbox';
     ContentContainerModule,
     CmButton,
     CmCheckbox,
+    SwitchModule,
+    DialogModule,
   ],
   exports: [
     PrintDialogComponent,
