@@ -1,0 +1,66 @@
+@import '/src/fonts';
+@import '/src/colors';
+
+.checkbox {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+  &__description {
+    font-size: 14px;
+    line-height: 20px;
+    font-family: $font-system;
+    cursor: pointer;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__checkbox {
+    cursor: pointer;
+    margin: 0;
+    align-self: flex-start;
+    appearance: none;
+    font: inherit;
+    color: currentColor;
+    min-width: 20px;
+    height: 20px;
+    border: 2px solid $color-border;
+    border-radius: 6px;
+    display: grid;
+    place-content: center;
+    background-color: $background-primary;
+    transition: background 0.1s ease-in,
+                border-color 0.1s ease-in;
+
+    &:hover:not([disabled]):not(:checked) {
+      background-color: $background-button-hover;
+    }
+
+    &:checked {
+      border-color: $color-primary;
+      background-color: $color-primary;
+    }
+
+    &[disabled] {
+      opacity: 0.4;
+    }
+
+    &:checked::before {
+      transform: scale(1);
+    }
+  
+    &::before {
+      content: "";
+      background-color: light-dark(white, $background-secondary);
+      width: 12px;
+      height: 10px;
+      transform: scale(0);
+      transition: 120ms transform ease-in-out;
+      clip-path: path("M10.9966 0.499996C11.6157 1.05037 11.6715 1.99848 11.1211 2.61766L4.66668 9.87891L0.878902 5.61766C0.328525 4.99848 0.384296 4.05037 1.00347 3.5C1.62264 2.94962 2.57075 3.00539 3.12113 3.62456L4.66668 5.36331L8.8789 0.624564C9.42928 0.00538993 10.3774 -0.0503812 10.9966 0.499996Z");
+      }
+  }
+}
+
+

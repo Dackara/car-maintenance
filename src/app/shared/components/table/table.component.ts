@@ -63,10 +63,10 @@ export class TableComponent<T extends RowData> {
     return this.selectedRows.hasValue() && !this.allRowSelected;
   }
 
-  public onAllRowToggle(event: MatCheckboxChange): void {
-    this.allRowSelected = event.checked;
+  public onAllRowToggle(checked: boolean): void {
+    this.allRowSelected = checked;
 
-    if(event.checked) {
+    if(checked) {
       this.selectedRows.select(...this.rows().map(row => row.id));
     } else {
       this.selectedRows.clear();

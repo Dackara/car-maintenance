@@ -9,11 +9,10 @@
               <div class="column">
                 <mat-icon class="column__drag-icon" cdkDragHandle>drag_indicator</mat-icon>
                 <span class="column__name">{{column.name | translate}}</span>
-                <mat-checkbox *ngIf="column.id !== 'name'"
-                              [disableRipple]="true"
-                              [checked]="column.visible"
+                <cm-checkbox *ngIf="column.id !== 'name'"
+                              [value]="column.visible"
                               (change)="column.visible = !column.visible">
-                </mat-checkbox>
+                </cm-checkbox>
               </div>
               <mat-divider class="column__divider"></mat-divider>
             </div>

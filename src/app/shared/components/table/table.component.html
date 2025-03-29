@@ -17,13 +17,11 @@
           <th class="cm-table__head-cell cm-table--column-select"
               *ngIf="config().actions.selectable"
           >
-            <mat-checkbox class="checkbox cm-table__checkbox"
-                          [checked]="allRowSelected"
-                          disableRipple="true"
-                          (change)="onAllRowToggle($event)"
-                          [indeterminate]="someRowSelected"
-            >
-            </mat-checkbox>
+            <cm-checkbox [value]="allRowSelected"
+                        [intermideate]="someRowSelected"
+                        (click)="$event.stopPropagation()"
+                        (change)="onAllRowToggle($event)">
+            </cm-checkbox>
           </th>
           @for (schema of columnSchemas(); track $index) {
               <th [attr.data-csv]="schema.name | translate"
@@ -49,12 +47,10 @@
               <td class="cm-table__cell cm-table--column-select"
                   *ngIf="config().actions.selectable"
               >
-                <mat-checkbox class="cm-table__checkbox"
-                              (click)="$event.stopPropagation()"
-                              [checked]="selectedRows.isSelected(row.id)"
-                              (change)="onSelectionChange(row.id)"
-                              disableRipple="true">
-                </mat-checkbox>
+                <cm-checkbox [value]="selectedRows.isSelected(row.id)"
+                             (click)="$event.stopPropagation()"
+                             (change)="onSelectionChange(row.id)">
+                </cm-checkbox>
               </td>
               @for (schema of columnSchemas(); track $index) {
                 <td *ngIf="schema.visible"

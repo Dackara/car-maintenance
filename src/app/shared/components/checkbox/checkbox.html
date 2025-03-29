@@ -1,0 +1,13 @@
+<div class="checkbox">
+  <input
+  class="checkbox__checkbox"
+  type="checkbox"
+  [checked]="value"
+  [disabled]="isDisabled"
+  (click)="onClick()"
+  (change)="$event.stopPropagation()">
+  <label class="checkbox__description">
+    <ng-content></ng-content>
+  </label>
+</div>
+

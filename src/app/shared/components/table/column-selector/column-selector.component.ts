@@ -5,9 +5,9 @@ import { ButtonModule } from '@shared/components/button/button.module';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
-import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { ColumnVisibilityEvent } from './interfaces';
+import { CmCheckbox } from '@shared/components/checkbox/checkbox';
 
 @Component({
   standalone: true,
@@ -20,7 +20,7 @@ import { ColumnVisibilityEvent } from './interfaces';
     ButtonModule,
     TranslateModule,
     CommonModule,
-    MatCheckboxModule,
+    CmCheckbox,
   ],
 })
 export class ColumnSelectorComponent {
@@ -36,7 +36,7 @@ export class ColumnSelectorComponent {
 
   onSwitchState($event:any, key: string) {
     $event.stopPropagation();
-    $event.preventDefault();
+    // $event.preventDefault();
 
     const visible = !this.columns.find(column => column.key === key).visible;
     const event: ColumnVisibilityEvent = {

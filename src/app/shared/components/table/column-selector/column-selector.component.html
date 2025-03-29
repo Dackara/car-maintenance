@@ -10,12 +10,9 @@
             mat-menu-item
             (click)="onSwitchState($event, column.key)"
     >
-      <mat-checkbox [checked]="column.visible"
-                    disableRipple="true">
-      </mat-checkbox>
-      <span>
+      <cm-checkbox [value]="column.visible">
         {{column.name | translate}}
-      </span>
+      </cm-checkbox>
     </button>
   </ng-template>
 </mat-menu>
