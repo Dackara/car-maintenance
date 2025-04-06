@@ -55,5 +55,25 @@
         "Бірнеше жазбаларды жою қосылды;",
         "Жазбаларды топтар арасында жылжыту қосылды."
       ]
+    }],
+  "fr": [{
+    "title": "Général",
+    "news": [
+        "Des modifications cosmétiques mineures ont été apportées à l'application;",
+        "Ajout de la traduction française;",
+        "Ajout de la traduction kazakhe;",
+        "Nouvelle devise ajoutée : Tenge;",
+        "Ajout d'illustrations aux champs de kilométrage et de devise."
+    ]
+    },{
+      "title": "Tableau",
+      "news": [
+        "Calendrier et fonctionnalités mis à jour;",
+        "Masquage des colonnes activé;",
+        "Exportation vers CSV ajoutée;",
+        "Ajout de la possibilité de sélectionner des entrées;",
+        "Ajout de la suppression de plusieurs enregistrements;",
+        "Ajout de la possibilité de déplacer des publications entre les groupes."
+      ]
     }]
 }
