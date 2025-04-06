@@ -1,0 +1,277 @@
+{
+  "PAGES": {
+    "WELCOME": {
+      "SUBTITLE": "Créer. Organiser. Planifier.",
+      "NEED_HELP": "Besoin d'aide ?",
+      "GITHUB": "Voir sur GitHub",
+      "MAIL": "Nous contacter",
+      "QUESTION": "Poser une question",
+      "BUTTONS": {
+        "GET_STARTED": "Commencer"
+      }
+    },
+    "DATABASE_SELECT": {
+        "TEXT": "Créer ou sélectionner une base de données existante",
+        "CREATE": "Créer",
+        "OPEN": "Ouvrir"
+    },
+    "DASHBOARD": {
+      "FEEDBACK": {
+        "TITLE": "Commentaires",
+        "DESCRIPTION": "Demander une fonctionnalité, signaler un bug"
+      },
+      "SOURCE_CODE": {
+        "TITLE": "Code source",
+        "DESCRIPTION": "Clonez, éditez et publiez !"
+      },
+      "CHANGELOG": {
+        "TITLE": "",
+        "DESCRIPTION": "Voir les nouveautés"
+      },
+      "DOCUMENTATION": {
+        "TITLE": "Documentation",
+        "DESCRIPTION": "Comment l'utiliser ?"
+      }
+    },
+    "DETAIL": {
+      "EMPTY": "Aucun enregistrement",
+      "LAST_MODIFIED": "Dernière modification",
+      "OVERALL_EXPENSE": "Dépenses globales"
+    },
+    "SETTINGS": {
+      "TITLE": "Paramètres",
+      "SECTIONS": {
+        "COMMON": "Générale",
+        "LANG": "Langue et région",
+        "APPEARANCE": "Apparence",
+        "UNITS": "Unités"
+      },
+      "FIELDS": {
+        "LANG": "Langue",
+        "START_PAGE": "Page d'accueil",
+        "REGION": "Pays",
+        "DATABASE_PATH": "Database",
+        "ICONS": "Icones",
+        "FIRST_TAB": "Premier onglet",
+        "MONO": "Mono",
+        "CURRENCY": "Devise",
+        "METRIC_SYSTEM": "Système métrique",
+        "ANIMATION": "Animations",
+        "COLORS":"Couleur accentuée",
+        "APPEARANCE":"Apparence"
+      },
+      "ICONS_PACK_NAMES": {
+        "DEFAULT": "Default"
+      },
+      "BUTTONS": {
+        "CHANGE": "Modifier",
+        "CARS": "Véhicules",
+        "CATEGORIES": "Groupes"
+      }
+    },
+    "EMPTY": {
+      "TEXT": "Sélectionner un groupe"
+    },
+    "PDF_EXPORT": {
+      "PATH": "Chemin de sauvegarde",
+      "ORDER_AND_VISIBILITY": "Ordre et visibilité",
+      "TITLE": "Exporter au format PDF",
+      "SHOW_TOTAL_SUM": "Afficher les dépenses totales pour chaque table",
+      "TOTAL": "Total"
+    },
+    "NAVIGATION": {
+      "TABS": {
+        "CATEGORIES": "Groupes",
+        "CARS": "Véhicules"
+      }
+    },
+    "CATEGORY_DETAILS": {
+      "GROUPS": "Groupes",
+      "WIDGETS": {
+        "INFO": "Information",
+        "NOTE": "Note",
+        "MILEAGE": "Kilométrage",
+        "OVERALL_EXPENSE": "Dépenses globales"
+      },
+      "LABELS": {
+        "YEAR": "Année",
+        "MAKE": "Fabrication",
+        "MODEL": "Model",
+        "VEHICLE_ID": "Immatriculation",
+        "ENGINE": "Moteur"
+      },
+      "TOOLTIPS": {
+        "OVERALL_EXPENSE": "Coûts pour toute la durée du service.\nCalculés à partir des données des tableaux.",
+        "MILEAGE": "Kilométrage du véhicule. La valeur sera automatiquement insérée dans le champ « Kilométrage » lors de la création de l'entrée."
+      }
+    }
+  },
+  "MENU": {
+    "ADD": "Ajouter",
+    "EDIT": "Éditer",
+    "DELETE": "Supprimer",
+    "MOVE": "Déplacer",
+    "ABOUT": "À propos",
+    "GITHUB": "GitHub",
+    "SETTINGS":"Paramètres",
+    "WHATS_NEW": "Quoi de neuf",
+    "FEEDBACK": "Commentaires",
+    "CAR": "Nouveau véhicule",
+    "CATEGORY": "Nouveau groupe",
+    "UPDATE": "Mise à jour disponible",
+    "TITLE" : {
+      "EXPORT": "Exporter",
+      "COLUMNS": "Colonnes"
+    }
+  },
+  "DIALOG": {
+    "ADD": "Ajouter",
+    "EDIT": "Éditer",
+    "RELEASE_NOTES": {
+      "TITLE": "Version",
+      "NEW_FEATURES": "Nouvelles fonctionnalités",
+      "BUGFIXES": "Corrections de bugs",
+      "IMPROVEMENTS": "Améliorations"
+    },
+    "MOVE": {
+      "TITLE": "Déplacer",
+      "SEARCH": "Rechercher",
+      "NO_SEARCH_RESULT": "Aucun résultat"
+    },
+    "FEEDBACK": {
+      "TITLE": "Commentaire",
+      "QUESTION_TITLE": "Poser une question",
+      "OPTIONS": {
+        "BUG": "Bug",
+        "FEATURE": "Fonctionnalité"
+      }
+    },
+    "CURRENCY": {
+      "TITLE": "Mettez à jour vos paramètres de devise",
+      "DESCRIPTION": "S'il vous plaît, mettez à jour votre devise"
+    },
+    "DELETE": {
+      "TITLE": "Confirmer la suppression",
+      "GROUPS": "groupes",
+      "TEXT": "Voulez-vous vraiment supprimer <b class=\"primary-text-color\">{{name}}</b>?<br>Ce processus ne peut pas être annulé.",
+      "DECLESIONS": {
+        "RECORDS": ["enregistrer", "enregistrements"],
+        "GROUPS": "groupe"
+      }
+    },
+    "CATEGORY": "Groupe",
+    "CAR": "Véhicule",
+    "COMMON": "Générale",
+    "INFO": "Information",
+    "PARTS": "Pièces",
+    "RECORD": "Enregistrer",
+    "BUTTONS": {
+      "ADD": "Ajouter",
+      "EDIT": "Éditer",
+      "SEND": "Envoyer",
+      "DELETE": "Supprimer",
+      "CANCEL": "Annuler",
+      "CHANGE": "Changer",
+      "EXPORT": "Exporter",
+      "SUBMIT": "Soumettre",
+      "MOVE": "Déplacer"
+    },
+    "VALIDATIONS": {
+      "NAME": "Entrez le nom.",
+      "DATE": "Entrez une date correcte.",
+      "EMAIL": "Entrez un e-mail valide.",
+      "TEXT": "Saisir du texte.",
+      "EXPENSE": {
+        "REQIRED": "Entrez la dépense."
+      },
+      "NUMBER": "Entrez une valeur numérique.",
+      "POSITIVE": "Entrez une valeur positive."
+    },
+    "FIELDS": {
+      "NAME": "Nom",
+      "CATEGORY": "Groupe",
+      "ILLUSTRATION": "Icone",
+      "MILEAGE": "Kilométrage",
+      "DATE": "Date",
+      "YEAR": "Année",
+      "MAKE": "Fabrication",
+      "MODEL": "Modèle",
+      "VEHICLE_ID": "Immatriculation",
+      "ENGINE": "Moteur",
+      "EXPENSE": "Frais",
+      "COMMENT": "Annotation",
+      "TEXT": "Texte",
+      "TYPE": "Type"
+    },
+    "ICON_GROUPS": {
+      "CAR_PARTS": "Pièces détachées",
+      "OTHERS": "Autres"
+    },
+    "TOOLTIPS": {
+      "CAR_PARTS": "Piéces à entretenir"
+    }
+  },
+  "ILLUSTRATIONS": {
+      "ENGINE": "Moteur",
+      "BATTERY": "Batterie",
+      "WHEEL": "Roue",
+      "OIL": "Huile",
+      "TRANSMISSION": "Transmission",
+      "HEADLIGHTS": "Phares",
+      "OTHER": "Autre",
+      "BRAKEBLOCK": "Frein",
+      "SPARK": "Allumage",
+      "WINDSHIELD": "Pare-brise"
+  },
+  "FEEDBACK_TYPES": {
+    "BUG": "Bug",
+    "IMPROVEMENT": "Amélioration"
+  },
+  "RECORDS_TABLE": {
+    "NAME": "Nom",
+    "MILEAGE": "Kilométrage",
+    "DATE": "Date",
+    "EXPENSE": "Dépense",
+    "COMMENT": "Annotation",
+    "CONSUMABLES": "Consommables"
+  },
+  "CURRENCY": {
+    "EURO": "Euro",
+    "DOLLAR": "Dollar",
+    "RUSSIAN_RUBLE": "Russian ruble",
+    "BELARUSSIAN_RUBLE": "Belarussian ruble",
+    "POUND": "Pound sterling",
+    "YEN": "Yen / Yuán",
+    "RUPEE": "Rupee",
+    "LIRA": "Lira",
+    "TENGE": "Tenge"
+  },
+  "METRIC_SYSTEM": {
+    "KILOMETERS": "Kilomètres",
+    "MILES": "Miles",
+    "KM": "km",
+    "MI": "mi"
+  },
+  "ERROR": "Oups, il y avait un problème.",
+  "FEEDBACK_SUCCESS": "Commentaires soumis.",
+  "NAVIGATIONS": {
+    "DASHBOARD": "Dashboard",
+    "RECORDS": "Enregistrements",
+    "EVENTS": "Événements",
+    "STORAGE": "Stockage",
+    "STATISTIC": "Graphiques"
+  },
+  "UNDER_DEV": "En cours de développement",
+  "SCHEMAS": {
+    "LIGHT": "Clair",
+    "DARK": "Sombre",
+    "AUTO": "Auto"
+  },
+  "SEARCH": "Recherche",
+  "NOTIFICATIONS": {
+    "EXPORT": {
+      "TEXT": "Exportation terminée",
+      "ACTION": "Ouvrir"
+    }
+  }
+}
